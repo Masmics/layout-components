@@ -1,4 +1,5 @@
 const HtmlPlugIn = require('html-webpack-plugin');
+const CleanPlugIn = require('clean-webpack-plugin');
 
 module.exports = {
   entry: './src/index.js',
@@ -10,7 +11,8 @@ module.exports = {
     port: 7890
   },
   plugins: [
-    new HtmlPlugIn({ template: './src/index.html'})
+    new HtmlPlugIn({ template: './src/index.html' }),
+    new CleanPlugIn()
   ],
   module: {
     rules: [
@@ -60,4 +62,4 @@ module.exports = {
       }
     ]
   }
-}
+};
